@@ -1,28 +1,28 @@
 "use client";
-import { Box, Container, Grid, Section } from "@radix-ui/themes";
+import { Box, Container } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 
 type Item = {
   text: string;
   selected: boolean;
 };
-const EGO = "Ego";
+const SHIRK = "Shirk";
 
 export default function Home() {
   const [items, setItems] = useState<Item[]>([
-    { text: "Happiness", selected: false },
-    { text: "Optimism", selected: false },
-    { text: "Kindness", selected: false },
-    { text: "Giving", selected: false },
-    { text: "Respect", selected: false },
-    { text: EGO, selected: false },
+    { text: "Shahada", selected: false },
+    { text: "Salah", selected: false },
+    { text: "Fasting", selected: false },
+    { text: "Zakah", selected: false },
+    { text: "Hajj", selected: false },
+    { text: SHIRK, selected: false },
   ]);
-  const [egoSelected, setEgoSelected] = useState(false);
+  const [shirkSelected, setShirkSelected] = useState(false);
   const [vibrateItem, setVibrateItem] = useState(false);
 
   const handleClick = (item: Item) => {
-    // If "Ego" is selected and the clicked item is not "Ego", return early
-    if (egoSelected && item.text !== EGO) {
+    // If "Shirk" is selected and the clicked item is not "Shirk", return early
+    if (shirkSelected && item.text !== SHIRK) {
       setVibrateItem(true);
       setTimeout(() => {
         setVibrateItem(false);
@@ -30,14 +30,14 @@ export default function Home() {
       return;
     }
 
-    // Initialize newEgoSelected with the current state of egoSelected
-    let newEgoSelected = egoSelected;
+    // Initialize newShirkSelected with the current state of shirkSelected
+    let newShirkSelected = shirkSelected;
 
     // Calculate the new state of items
     const newItems = items.map((i) => {
-      // If the clicked item is "Ego", calculate the new state of egoSelected
-      if (item.text === EGO) {
-        newEgoSelected = !item.selected;
+      // If the clicked item is "Shirk", calculate the new state of shirkSelected
+      if (item.text === SHIRK) {
+        newShirkSelected = !item.selected;
       }
 
       // If the current item is not the clicked item, return it unchanged
@@ -52,27 +52,27 @@ export default function Home() {
       };
     });
 
-    // Update the state of egoSelected and items with the new state
-    setEgoSelected(newEgoSelected);
+    // Update the state of shirkSelected and items with the new state
+    setShirkSelected(newShirkSelected);
     setItems(newItems);
   };
 
   useEffect(() => {
-    // If "Ego" is selected, update the state of items
-    if (egoSelected) {
+    // If "Shirk" is selected, update the state of items
+    if (shirkSelected) {
       setItems((prev) =>
         prev.map((i) => {
-          // If the current item is not "Ego", set its selected state to false
-          if (i.text !== EGO) {
+          // If the current item is not "Shirk", set its selected state to false
+          if (i.text !== SHIRK) {
             return { ...i, selected: false };
           }
 
-          // If the current item is "Ego", return it unchanged
+          // If the current item is "Shirk", return it unchanged
           return i;
         })
       );
     }
-  }, [egoSelected]); // Run this effect when egoSelected changes
+  }, [shirkSelected]); // Run this effect when shirkSelected changes
 
   return (
     <Box mt="22vh">
@@ -91,7 +91,7 @@ export default function Home() {
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     className={`w-6 h-6 check-${
-                      item.text == EGO ? "red" : "green"
+                      item.text == SHIRK ? "red" : "green"
                     }`}
                   >
                     <path
