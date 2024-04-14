@@ -6,4 +6,4 @@ Please reset your preference in life until you become a coder. Becasue when you 
 
 
 # Preview
-![next-preference-reset](https://github.com/seAfnan/next-preference-reset/assets/20145270/09fe8fa6-ae61-45cb-86c1-17b7a7f381e8)
+![next-preference-reset](https://github.com/seAfnan/next-preference-reset/assets/20145270/1c994a18-9a37-467f-a309-5f7f65ffdfb9)
