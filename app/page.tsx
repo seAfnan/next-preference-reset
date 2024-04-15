@@ -1,5 +1,5 @@
 "use client";
-import { Box, Container } from "@radix-ui/themes";
+import { Box, Container, Heading } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 
 type Item = {
@@ -75,8 +75,11 @@ export default function Home() {
   }, [shirkSelected]); // Run this effect when shirkSelected changes
 
   return (
-    <Box mt="22vh">
-      <Container size="2">
+    <Box mt="12vh">
+      <Heading size="8">
+        {shirkSelected ? "Don't destroy your deeds" : "Be a good Muslim"}
+      </Heading>
+      <Container mt="9vh" size="2">
         <ul className="grid">
           {items.map((item) => {
             return (
