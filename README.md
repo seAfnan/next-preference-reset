@@ -9,4 +9,5 @@ Please reset your preference in life until you become a coder. Becasue when you 
 ![next-preference-reset](https://github.com/seAfnan/next-preference-reset/assets/20145270/1c994a18-9a37-467f-a309-5f7f65ffdfb9)
 
 
-# Live view [Reset Preference](https://next-preference-reset.vercel.app/)
+# Live at
+[Reset Preference](https://next-preference-reset.vercel.app/)
